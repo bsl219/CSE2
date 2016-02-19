@@ -12,9 +12,11 @@ public class CardGenerator {
         //print random number between 1 and 52
         int randomNumber = (int) (Math.random() * 52) + 1;
         
+        //construct variables
         String suit;
         String identity;
         
+        //determine suit based on random number
         if(randomNumber < 14) {
             suit = "Diamonds";
         }
@@ -31,8 +33,10 @@ public class CardGenerator {
             suit = "Spades";
         }
         
+        //divide random number by 13 and take remainder as new variable value
         randomNumber = randomNumber % 13;
         
+        //determine identity of card and make special cases for face cards
         switch(randomNumber) {
             case 0: identity = "King";
             break;
@@ -45,7 +49,7 @@ public class CardGenerator {
             default: identity = Integer.toString(randomNumber);
         }
         
-        
+        //print output statement
         System.out.println("You picked the " + identity + " of "+
         suit);
     }
