@@ -16,7 +16,7 @@ public class RunFactorial{
         
         Scanner myScanner = new Scanner(System.in); //declare and construct
         
-        System.out.println("Please enter an integer between 9 and 6: "); //print input statement
+        System.out.println("Please enter an integer between 9 and 16: "); //print input statement
         int number = 0; //create input variable
         
         //test if input is int between 9 and 16 inclusive
