@@ -88,20 +88,55 @@ public class CSE2Linear{
          }
          
          int counter = 1;
-         
+         int pos = 15 / 2;
+         int length = 15/2;
          //say if search number is in the array and 
          //tell how many iterations it took to find it
-         for(int i = 0; i < 15; i++){
-             if(grades[i] == searchNum1){
+         while(true){
+             
+             System.out.println(pos);
+             System.out.println(length);
+             System.out.println();
+             
+             if(searchNum1 == grades[pos]){
                  System.out.println(searchNum1 + " was found in the list with " + 
                  counter + " iterations.");
                  break;
              }
-             else{
-                 if(i == 14){
-                     System.out.println(searchNum1 + " was not found in the list with " +
-                    counter + " iterations."); 
+             
+             else if(searchNum1 > grades[pos]){
+                 if(length == 1){
+                     pos = pos + length;
                  }
+                 else{
+                     pos = pos + length/2;
+                     if(length % 2 == 1){
+                      length = length / 2 + 1;   
+                     }
+                     else{
+                         length = length / 2;
+                     }
+                 }
+             }
+             
+             else{
+                 if(length == 1){
+                     pos = pos - length;
+                 }
+                 else{
+                     pos = pos - length / 2;
+                     if(length % 2 == 1){
+                      length = length / 2 + 1;   
+                     }
+                     else{
+                         length = length / 2;
+                     }
+                 }
+             }
+             if(counter == 5){
+                 System.out.println(searchNum1 + " was not found in the list with " + 
+                 counter + " iterations.");
+                 break;
              }
              counter = counter + 1;
          }
