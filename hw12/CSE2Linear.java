@@ -94,10 +94,6 @@ public class CSE2Linear{
          //tell how many iterations it took to find it
          while(true){
              
-             System.out.println(pos);
-             System.out.println(length);
-             System.out.println();
-             
              if(searchNum1 == grades[pos]){
                  System.out.println(searchNum1 + " was found in the list with " + 
                  counter + " iterations.");
