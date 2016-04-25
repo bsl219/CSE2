@@ -34,6 +34,9 @@ public class Triangles{
         for(int i = 1; i <= number; i++){
             for(int j = 0; j < i; j++){
                 System.out.print(i);
+                if(number > 9 && i < 10){
+                    System.out.print(" ");
+                }
             }
             System.out.println();
         }
@@ -41,6 +44,9 @@ public class Triangles{
         for(int i = number - 1; i >= 1; i--){
             for(int j = 0; j < i; j++){
                 System.out.print(i);
+                if(number > 9 && i < 10){
+                    System.out.print(" ");
+                }
             }
             System.out.println();
         }
@@ -52,7 +58,10 @@ public class Triangles{
         int j = 0;
         while(i <= number){
             while(j < i){
-                System.out.print(i);  
+                System.out.print(i);
+                if(number > 9 && i < 10){
+                    System.out.print(" ");
+                }
                 j++;
             }
             System.out.println();
@@ -65,7 +74,10 @@ public class Triangles{
         
         while(i >= 1){
             while(j < i){
-                System.out.print(i);  
+                System.out.print(i);
+                if(number > 9 && i < 10){
+                    System.out.print(" ");
+                }
                 j++;
             }
             System.out.println();
@@ -82,7 +94,10 @@ public class Triangles{
             if(i <=number){
                 do{
                     if(j<i){
-                        System.out.print(i);  
+                        System.out.print(i);
+                        if(number > 9 && i < 10){
+                    System.out.print(" ");
+                }
                         j++;
                     }
                 }while(j < i);
@@ -97,7 +112,10 @@ public class Triangles{
             if(i >= 1){
                 do{
                     if(j<i){
-                        System.out.print(i);  
+                        System.out.print(i);
+                        if(number > 9 && i < 10){
+                    System.out.print(" ");
+                }
                         j++;
                     }
                 }while(j < i);

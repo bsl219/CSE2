@@ -24,8 +24,8 @@ public class RunFactorial{
             if(myScanner.hasNextInt()){
                 number = myScanner.nextInt();
                 if(number <= 16 && number >= 9) {
-                break;
-            }
+                    break;
+                }
             }
             else {
                 System.out.println("Invalid input, enter again!"); //print error statement
