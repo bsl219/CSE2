@@ -3,71 +3,78 @@
 //CSE2
 //hw13
 
-//
+//creates a three dimensional array of strings, fills with code, checks to see if input code
+//is in array, holoports codes to new three dimensional array, rearranges codes
 
+//import scanner and decimal format
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
+//set up class
 public class Holoportation{
     
+    //set up main method
     public static void main(String[] args){
         
-        String[][][] array3D = soRandom();
+        String[][][] array3D = soRandom(); //declare and construct
         
+        //fill array with codes using coder method
         for(int i = 0; i < array3D.length; i++){
-            
             for(int j = 0; j < array3D[i].length; j++){
-                
                 for(int k = 0; k < array3D[i][j].length; k++){
                     array3D[i][j][k] = coder();
                 }
             }
         }
         
-        print(array3D);
         
-        String[][][] array2 = soRandom();
+        print(array3D); //print array
         
-        holoport(array3D, array2);
+        String[][][] array2 = soRandom(); //declare and construct
         
-        System.out.println();
-        System.out.println();
         
-        print(array2);
+        holoport(array3D, array2); //holoport array3D into array2
         
-        sampling(array2);
+        System.out.println(); //print new line
+        System.out.println(); //print new line
         
-        percentage(array3D, array2);
+        print(array2); //print array
         
-        System.out.println();
-        System.out.println();
+        sampling(array2); //call sampling method
         
-        String[][][] frank = frankenstein(array2);
+        percentage(array3D, array2); //call precentage method
         
-        print(frank);
+        System.out.println(); //print new line
+        System.out.println(); //print new line
+        
+        String[][][] frank = frankenstein(array2); //declare and construct
+        
+        print(frank);//print array
         
         
     }
     
     public static String[][][] soRandom(){
         
+        //makes array random length
         String[][][] array3D = new String[(int) (Math.random() * 10) + 1][][];
         
         for(int i = 0; i < array3D.length; i++){
-            
+            //makes array random length
             array3D[i] = new String[(int) (Math.random() * 10) + 1][];
         }
         
         for(int i = 0; i < array3D.length; i++){
             
             for(int j = 0; j < array3D[i].length; j++){
-                
+                //makes array random length
                 array3D[i][j] = new String[(int) (Math.random() * 10) + 1];
             }
         }
-        return array3D;
+        return array3D; //returns array
     }
     
+    //makes codes starting with 2 capital letters and ending with 4 integers
     public static String coder(){
         
         String code = Character.toString((char)((int)'A'+Math.random()*((int)'Z'-(int)'A'+1))) +
@@ -79,6 +86,7 @@ public class Holoportation{
         return code;
     }
     
+    //prints array
     public static void print(String[][][] array3D){
         
         for(int i = 0; i < array3D.length; i++){
@@ -115,6 +123,7 @@ public class Holoportation{
         }
     }
     
+    //fills new array with code from old array, if there is extra space, it is filled with $$$$$$
     public static String[][][] holoport(String[][][] array3D, String[][][] array2){
         
         if(array2.length <= array3D.length){
@@ -313,7 +322,7 @@ public class Holoportation{
             }
         }
         for(int i = 0; i < array2.length; i++){
-            
+            min = i;
             for(int j = i; j < array2.length; j++){
                 if(array2[j].length < array2[min].length){
                         min = j;
